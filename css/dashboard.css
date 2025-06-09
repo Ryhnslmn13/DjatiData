@@ -1,0 +1,229 @@
+/* Hero Section */
+.hero-section {
+    position: relative;
+    height: 350px;
+    background-image: url('https://i.ibb.co/hLqJqCf/background-gedung.jpg'); /* Ganti dengan URL gambar gedung Anda */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4); /* Overlay gelap untuk keterbacaan teks */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    color: var(--white);
+}
+
+.hero-content {
+    z-index: 2;
+}
+
+.hero-content h1 {
+    font-size: 3em;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* Dashboard Container */
+.dashboard-container {
+    background-color: #fff;
+    padding: 30px;
+    margin: -100px 5% 50px 5%; /* Margin atas negatif untuk menumpuk di atas hero */
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 3;
+}
+
+/* Search Bar */
+.search-bar {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.search-bar i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #aaa;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 12px 15px 12px 40px; /* Padding kiri untuk ikon */
+    border-radius: 10px;
+    border: none;
+    background-color: #f0f2f5;
+    font-size: 1em;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Dashboard Grid */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.dashboard-card {
+    background-color: #6292B4; /* Warna biru dari gambar */
+    padding: 25px;
+    border-radius: 15px;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(98, 146, 180, 0.4);
+}
+
+.dashboard-card i {
+    font-size: 3.5em; /* Ukuran ikon besar */
+    margin-bottom: 15px;
+}
+
+.dashboard-card p {
+    margin: 0;
+    font-weight: 500;
+    font-size: 0.9em;
+    line-height: 1.4;
+}
+
+/* Footer (Adaptasi dari CSS Anda agar sesuai gambar) */
+.footer {
+    background-color: #145b8f; /* Warna footer sesuai navbar */
+    color: #fff;
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Agar responsif */
+}
+
+.footer-social {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-social a {
+    color: #fff;
+    font-size: 1.2em;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+    color: #6292B4;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+}
+
+.footer-logo img {
+    margin-right: 10px;
+}
+
+.footer-logo span {
+    font-weight: 700;
+    color: #fff;
+    font-size: 1.2em;
+}
+
+.footer-logo small {
+    margin-left: 10px;
+    color: #ccc;
+    font-size: 0.8em;
+}
+
+.footer-copyright p {
+    margin: 0;
+    font-size: 0.9em;
+    color: #ccc;
+}
+
+
+/* Responsive Design (Adaptasi & Penambahan) */
+@media (max-width: 992px) {
+    .dashboard-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 kolom di tablet */
+    }
+    .footer {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .navbar .logo {
+        margin-bottom: 15px;
+    }
+
+    .nav-links ul {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+    }
+    .nav-links ul li {
+        margin-left: 0;
+    }
+    .hero-content h1 {
+        font-size: 2.2em;
+    }
+    .dashboard-container {
+        margin: -80px 3% 30px 3%;
+    }
+}
+
+@media (max-width: 576px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr; /* 1 kolom di HP */
+    }
+    .hero-section {
+        height: 250px;
+    }
+    .hero-content h1 {
+        font-size: 1.8em;
+    }
+    .dashboard-container {
+         padding: 20px;
+    }
+    .dashboard-card {
+        padding: 20px;
+    }
+     .dashboard-card i {
+        font-size: 3em;
+    }
+    
+}

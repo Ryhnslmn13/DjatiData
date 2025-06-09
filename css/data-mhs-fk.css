@@ -1,0 +1,249 @@
+/* Data Page Specific Styles */
+.data-page-main {
+    padding: 30px 5%; /* Padding for the main content area */
+    background-color: #f0f2f5;
+}
+
+.info-banner {
+    background-color: #89ADC7; /* Light blue background */
+    border-radius: 15px;
+    padding: 25px 50px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    margin-bottom: 40px;
+    max-width: 1150px; /* Limit width */
+    margin-left: auto;
+    margin-right: auto; /* Center the banner */
+}
+
+.info-icon {
+    font-size: 4em;
+    color: #0D3D5F;
+    /* For a more rounded look if needed */
+    /* background-color: #007bff; */
+    /* color: #fff; */
+    /* border-radius: 50%; */
+    /* padding: 15px; */
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: center; */
+    /* width: 80px; */
+    /* height: 80px; */
+}
+
+.info-content h2 {
+    font-size: 1.8em;
+    color: #2c3e50; /* Darker text for heading */
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.info-content p {
+    font-size: 0.95em;
+    color: #555;
+    line-height: 1.5;
+}
+
+.data-table-section {
+    max-width: 1300px; /* Match banner width */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.data-table-card {
+    padding: 30px;
+    /* Inherits general .card styles, but we'll add specific table styles */
+    display: block; /* Override flex from .card if it causes issues */
+    text-align: left; /* Align text within card to left */
+}
+
+.data-table-card h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 25px;
+    text-align: center; /* Center table title */
+}
+
+.table-responsive {
+    overflow-x: auto; /* Make table horizontally scrollable on small screens */
+    margin-bottom: 20px;
+}
+
+.data-table-card table {
+    width: 100%;
+    border-collapse: collapse; /* Remove space between borders */
+    margin-top: 20px;
+}
+
+.data-table-card th, .data-table-card td {
+    border: 1px solid #ddd;
+    padding: 12px 15px;
+    text-align: left;
+    font-size: 0.9em;
+}
+
+.data-table-card thead th {
+    background-color: #f8f9fa; /* Light header background */
+    font-weight: 600;
+    color: #333;
+    white-space: nowrap; /* Prevent headers from wrapping */
+}
+
+.data-table-card tbody tr:nth-child(even) {
+    background-color: #f2f2f2; /* Zebra striping for rows */
+}
+
+.data-table-card tbody tr:hover {
+    background-color: #e9e9e9; /* Hover effect for rows */
+}
+
+.data-table-card td:last-child,
+.data-table-card th:last-child {
+    white-space: nowrap; /* Prevent date column from wrapping */
+}
+
+.table-footer {
+    display: flex;
+    justify-content: flex-end; /* Align button to the right */
+    padding-top: 15px;
+}
+
+.download-button {
+    background-color: #fff;
+    color: #007bff;
+    border: 1px solid #007bff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 0.95em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.download-button:hover {
+    background-color: #e7f2ff; /* Lighter blue on hover */
+    color: #0056b3;
+}
+
+/* Dropdown untuk tombol Download Dataset */
+.download-dropdown-menu {
+    display: none; /* Sembunyikan secara default */
+    position: absolute;
+    background-color: #fff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 8px;
+    overflow: hidden; /* Pastikan sudut membulat diterapkan ke children */
+}
+
+.download-dropdown-menu.show {
+    display: block; /* Tampilkan ketika kelas 'show' ada */
+}
+
+.download-dropdown-menu a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 0.9em;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.download-dropdown-menu a:hover {
+    background-color: #f1f1f1;
+    color: #007bff;
+}
+
+/* Penyesuaian untuk tombol download agar bisa menempatkan dropdown secara relatif */
+.table-footer {
+    position: relative; /* Penting untuk menempatkan dropdown secara relatif terhadap footer tabel */
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Navbar active link style */
+.nav-links ul li a.active {
+    color: #007bff; /* Active link color */
+    font-weight: 600;
+}
+
+/* Responsive adjustments for the new page */
+@media (max-width: 768px) {
+    .info-banner {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+        gap: 15px;
+    }
+
+    .info-icon {
+        font-size: 3.5em;
+    }
+
+    .info-content h2 {
+        font-size: 1.5em;
+    }
+
+    .info-content p {
+        font-size: 0.85em;
+    }
+
+    .data-table-card {
+        padding: 20px;
+    }
+
+    .data-table-card h3 {
+        font-size: 1.3em;
+    }
+
+    .data-table-card th, .data-table-card td {
+        padding: 10px;
+        font-size: 0.85em;
+    }
+
+    .download-button {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 480px) {
+    .data-page-main {
+        padding: 20px 3%;
+    }
+
+    .info-banner {
+        padding: 15px;
+    }
+
+    .info-icon {
+        font-size: 3em;
+    }
+
+    .info-content h2 {
+        font-size: 1.2em;
+    }
+
+    .info-content p {
+        font-size: 0.8em;
+    }
+
+    .data-table-card {
+        padding: 15px;
+    }
+
+    .data-table-card h3 {
+        font-size: 1.1em;
+    }
+
+    .data-table-card th, .data-table-card td {
+        padding: 8px;
+        font-size: 0.8em;
+    }
+}

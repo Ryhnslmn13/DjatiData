@@ -1,0 +1,269 @@
+/* General Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5; /* Light gray background */
+    color: #333;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 56px;
+    padding: 15px 5%;
+    background-color: #0D3D5F;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .logo {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .logo img {
+    margin-right: 10px;
+}
+
+.navbar .logo span {
+    font-weight: 700;
+    color: #fff;
+    font-size: 1.2em;
+}
+
+.navbar .logo small {
+    margin-left: 5px;
+    color: #fff;
+    font-size: 0.8em;
+}
+
+.nav-links ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.nav-links ul li {
+    margin-left: 30px;
+}
+
+.nav-links ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links ul li a:hover {
+    color: #808080;
+}
+
+.nav-links .btn-login {
+    background-color: #fff;
+    color: #111;
+    padding: 8px 15px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-links .btn-login:hover {
+    background-color: #6292B4;
+    color: #fff;
+}
+
+/* Footer */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 30px 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.footer-social {
+    margin-bottom: 20px;
+}
+
+.footer-social a {
+    color: #fff;
+    font-size: 1.5em;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+    color: #007bff;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.footer-logo img {
+    margin-right: 10px;
+}
+
+.footer-logo span {
+    font-weight: 700;
+    color: #007bff;
+    font-size: 1.2em;
+}
+
+.footer-logo small {
+    margin-left: 5px;
+    color: #ccc;
+    font-size: 0.8em;
+}
+
+.footer p {
+    font-size: 0.9em;
+    color: #ccc;
+}
+
+/* Basic JavaScript for carousel (optional, for simple scrolling) */
+/* Create a file named `script.js` if you want to implement this */
+/*
+document.addEventListener('DOMContentLoaded', () => {
+    const carouselContainers = document.querySelectorAll('.carousel-container');
+
+    carouselContainers.forEach(container => {
+        const cardsWrapper = container.querySelector('.cards-wrapper');
+        const leftArrow = container.querySelector('.left-arrow');
+        const rightArrow = container.querySelector('.right-arrow');
+
+        leftArrow.addEventListener('click', () => {
+            cardsWrapper.scrollBy({
+                left: -cardsWrapper.offsetWidth / 2, // Scroll half the container width
+                behavior: 'smooth'
+            });
+        });
+
+        rightArrow.addEventListener('click', () => {
+            cardsWrapper.scrollBy({
+                left: cardsWrapper.offsetWidth / 2, // Scroll half the container width
+                behavior: 'smooth'
+            });
+        });
+    });
+});
+*/
+
+/* Responsive Design (Basic) */
+@media (max-width: 900px) {
+    .cards-wrapper {
+        justify-content: flex-start; /* Align cards to start on smaller screens */
+        overflow-x: scroll; /* Enable scrolling explicitly */
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .navbar .logo {
+        margin-bottom: 15px;
+    }
+
+    .nav-links ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links ul li {
+        margin-left: 0;
+    }
+
+    .carousel-arrow {
+        font-size: 1.2em;
+        padding: 10px 8px;
+    }
+
+    .left-arrow {
+        left: 0;
+    }
+
+    .right-arrow {
+        right: 0;
+    }
+
+    .hero-image {
+        height: 250px;
+    }
+
+    .data-overview h2, .dashboard-links h2 {
+        font-size: 1.6em;
+    }
+
+    .card, .dashboard-card {
+        width: 250px;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 10px 3%;
+    }
+
+    .navbar .logo span {
+        font-size: 1em;
+    }
+
+    .navbar .logo small {
+        font-size: 0.7em;
+    }
+
+    .nav-links .btn-login {
+        padding: 6px 12px;
+        font-size: 0.9em;
+    }
+
+    .data-overview, .dashboard-links {
+        padding: 20px 3%;
+    }
+
+    .hero-image {
+        height: 180px;
+    }
+
+    .card, .dashboard-card {
+        width: 200px;
+        padding: 15px;
+    }
+
+    .dashboard-card i {
+        font-size: 2.5em;
+    }
+
+    .btn-lihat-selengkapnya {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+
+    .footer-social a {
+        font-size: 1.2em;
+    }
+
+    .footer-logo span {
+        font-size: 1em;
+    }
+
+    .footer-logo small {
+        font-size: 0.7em;
+    }
+
+    .footer p {
+        font-size: 0.8em;
+    }
+}

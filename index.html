@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DJATI DATA - UIN Sunan Gunung Djati</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                <img src="images/lg_navbar.png" alt="Djati Data Logo">
+                <div class="logo-text">
+                    <span>DJATI DATA</span>
+                    <small>UIN Sunan Gunung Djati</small>
+                </div>
+            </div>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="#">Beranda</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="#">Data</a></li>
+                </ul>
+            </nav>
+            <a href="login.html" class="btn-login">Log In</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            </section>
+
+        <div class="main-content">
+            <section id="grafik" class="content-section">
+                <h2 class="section-title">UIN Bandung dalam Grafik</h2>
+                <div class="carousel" id="grafik-carousel">
+                    <button class="carousel-arrow prev"><i class="fa-solid fa-chevron-left"></i></button>
+                    <div class="carousel-viewport">
+                        <div class="carousel-track">
+                            <div class="card chart-card">
+                                <img src="images/chart.png" alt="Grafik Jumlah Mahasiswa">
+                                <p>Jumlah Mahasiswa</p>
+                            </div>
+                            <div class="card chart-card">
+                                <img src="images/chart.png" alt="Grafik Jumlah Tenaga Didik">
+                                <p>Jumlah Tenaga Didik</p>
+                            </div>
+                            <div class="card chart-card">
+                                <img src="images/chart.png" alt="Grafik Jumlah Program Studi">
+                                <p>Jumlah Program Studi</p>
+                            </div>
+                             </div>
+                    </div>
+                    <button class="carousel-arrow next"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+            </section>
+
+            <section id="dashboard" class="content-section">
+                <h2 class="section-title">Dashboard</h2>
+                 <div class="carousel" id="dashboard-carousel">
+                    <button class="carousel-arrow prev"><i class="fa-solid fa-chevron-left"></i></button>
+                    <div class="carousel-viewport">
+                        <div class="carousel-track">
+                            <a href="#" class="card dashboard-card">
+                                <i class="fa-solid fa-display"></i>
+                                <p>Dashboard Monitoring Akademik</p>
+                            </a>
+                            <a href="#" class="card dashboard-card">
+                                <i class="fa-solid fa-chart-line"></i>
+                                <p>Dashboard Monitoring Mutu dan Akreditasi</p>
+                            </a>
+                            <a href="#" class="card dashboard-card">
+                               <i class="fa-solid fa-book-open"></i>
+                                <p>Dashboard Ringkasan Mahasiswa</p>
+                            </a>
+                            <a href="#" class="card dashboard-card">
+                                <i class="fa-solid fa-user-graduate"></i>
+                                <p>Dashboard Data Alumni</p>
+                            </a>
+                             </div>
+                    </div>
+                    <button class="carousel-arrow next"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+                <div class="section-cta">
+                    <a href="dashboard.html" class="btn-primary">Lihat Selengkapnya <i class="fa-solid fa-arrow-right-long"></i></a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-socials">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            </div>
+            <div class="footer-logo">
+                <img src="images/lg_navbar.png" alt="Djati Data Logo">
+                <div class="logo-text">
+                    <span>DJATI DATA</span>
+                    <small>UIN Sunan Gunung Djati</small>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <p>© Kelompok 6, Sistem Informasi</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/index.js"></script>
+</body>
+</html>
