@@ -75,13 +75,34 @@ body {
     text-decoration: none;
     font-weight: 450;
     padding: 0.5rem 1rem;
+    border-radius: 8px;
     transition: all 0.3s ease;
     position: relative;
 }
 
+/* Normal nav-link hover effect */
 .nav-link:hover {
     opacity: 50%;
     transform: translateY(-2px);
+}
+
+/* Active nav-link styles */
+.nav-link.active {
+    color: white;
+    opacity: 50%;
+    text-decoration: none;
+    font-weight: 450;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* Active nav-link hover effect (berbeda dengan yang normal) */
+.nav-link.active:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+    color: #fff;
 }
 
 .login-btn {
@@ -108,7 +129,7 @@ body {
 .hero {
     position: relative;
     height: 60vh;
-    background: #0D3D5F:
+    background: #0D3D5F;
     background-size: cover;
     background-position: center;
     display: flex;
@@ -151,7 +172,6 @@ body {
 .slide.active {
     opacity: 1;
 }
-
 
 .hero-title {
     font-size: 4rem;
@@ -251,40 +271,11 @@ body {
     font-size: 0.9rem;
 }
 
-
-/* Basic JavaScript for carousel (optional, for simple scrolling) */
-/* Create a file named `script.js` if you want to implement this */
-/*
-document.addEventListener('DOMContentLoaded', () => {
-    const carouselContainers = document.querySelectorAll('.carousel-container');
-
-    carouselContainers.forEach(container => {
-        const cardsWrapper = container.querySelector('.cards-wrapper');
-        const leftArrow = container.querySelector('.left-arrow');
-        const rightArrow = container.querySelector('.right-arrow');
-
-        leftArrow.addEventListener('click', () => {
-            cardsWrapper.scrollBy({
-                left: -cardsWrapper.offsetWidth / 2, // Scroll half the container width
-                behavior: 'smooth'
-            });
-        });
-
-        rightArrow.addEventListener('click', () => {
-            cardsWrapper.scrollBy({
-                left: cardsWrapper.offsetWidth / 2, // Scroll half the container width
-                behavior: 'smooth'
-            });
-        });
-    });
-});
-*/
-
-/* Responsive Design (Basic) */
+/* Responsive Design */
 @media (max-width: 900px) {
     .cards-wrapper {
-        justify-content: flex-start; /* Align cards to start on smaller screens */
-        overflow-x: scroll; /* Enable scrolling explicitly */
+        justify-content: flex-start;
+        overflow-x: scroll;
     }
 }
 
@@ -298,39 +289,17 @@ document.addEventListener('DOMContentLoaded', () => {
         margin-bottom: 15px;
     }
 
-    .nav-links ul {
-        flex-direction: column;
-        gap: 15px;
+    .nav-menu {
+        gap: 0.5rem;
     }
 
-    .nav-links ul li {
-        margin-left: 0;
+    .nav-link {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
     }
 
-    .carousel-arrow {
-        font-size: 1.2em;
-        padding: 10px 8px;
-    }
-
-    .left-arrow {
-        left: 0;
-    }
-
-    .right-arrow {
-        right: 0;
-    }
-
-    .hero-image {
-        height: 250px;
-    }
-
-    .data-overview h2, .dashboard-links h2 {
-        font-size: 1.6em;
-    }
-
-    .card, .dashboard-card {
-        width: 250px;
-        padding: 20px;
+    .hero-title {
+        font-size: 2.5rem;
     }
 }
 
@@ -339,54 +308,18 @@ document.addEventListener('DOMContentLoaded', () => {
         padding: 10px 3%;
     }
 
-    .navbar .logo span {
-        font-size: 1em;
+    .nav-menu {
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
     }
 
-    .navbar .logo small {
-        font-size: 0.7em;
+    .nav-link {
+        padding: 0.5rem;
+        text-align: center;
     }
 
-    .nav-links .btn-login {
-        padding: 6px 12px;
-        font-size: 0.9em;
-    }
-
-    .data-overview, .dashboard-links {
-        padding: 20px 3%;
-    }
-
-    .hero-image {
-        height: 180px;
-    }
-
-    .card, .dashboard-card {
-        width: 200px;
-        padding: 15px;
-    }
-
-    .dashboard-card i {
-        font-size: 2.5em;
-    }
-
-    .btn-lihat-selengkapnya {
-        padding: 10px 20px;
-        font-size: 0.9em;
-    }
-
-    .footer-social a {
-        font-size: 1.2em;
-    }
-
-    .footer-logo span {
-        font-size: 1em;
-    }
-
-    .footer-logo small {
-        font-size: 0.7em;
-    }
-
-    .footer p {
-        font-size: 0.8em;
+    .hero-title {
+        font-size: 2rem;
     }
 }

@@ -1,13 +1,3 @@
-// Hero slider functionality
-let slides = document.querySelectorAll('.slide');
-let currentSlide = 0;
-
-setInterval(() => {
-    slides[currentSlide].classList.remove('active');
-    currentSlide = (currentSlide + 1) % slides.length;
-    slides[currentSlide].classList.add('active');
-}, 5000); // Ganti gambar tiap 5 detik
-
 // Preview link functionality - untuk semua link preview
 document.addEventListener('DOMContentLoaded', function() {
     // Ambil semua link preview
