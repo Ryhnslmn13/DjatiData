@@ -13,30 +13,42 @@
 </head>
 <body>
 
-    <header class="navbar">
-        <div class="logo">
-            <img src="images/lg_navbar.png" alt="Djati Data Logo">
-            <div class="logo-text">
-                <span>Djati DATA</span>
-                <small>UIN Sunan Gunung Djati</small>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <div class="logo">
+                    <img src="images/Logouin.png" alt="Logo UIN" style="width: 100%; height: 100%; object-fit: contain;" />
+                </div>
+                <div class="brand-text">
+                    <h2>Djati DATA</h2>
+                    <p>UIN Sunan Gunung Djati</p>
+                </div>
             </div>
-        </div>
-        <nav class="nav-links">
-            <ul>
-                <li><a href="index.html">Beranda</a></li>
-                <li><a href="#">Dashboard</a></li>
-                <li><a href="#">Data</a></li>
-                <li><a href="#" class="btn-login">Log in</a></li>
-            </ul>
+            <div class="nav-menu">
+                <a href="#" class="nav-link">Beranda</a>
+                <a href="#" class="nav-link">Dashboard</a>
+                <a href="#" class="nav-link">Data</a>
+                <button class="login-btn">Log In</button>
+            </div>
         </nav>
     </header>
 
-    <main>
-        <section class="hero-section">
-            <div class="hero-content">
-                <h1>Dashboard Djati</h1>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg">
+            <div class="hero-slider">
+                <img src="images/fotobg1.png" class="slide active">
+                <img src="images/fotobg2.png" class="slide">
+                <img src="images/fotobg3.png" class="slide">
             </div>
-        </section>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">Dashboard Djati</h1>
+        </div>
+    </section>
+
+    <main>
 
         <div class="dashboard-container">
             <div class="search-bar">
@@ -81,19 +93,28 @@
         </div>
     </main>
 
+    <!-- Footer -->
     <footer class="footer">
-        <div class="footer-social">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
-            <a href="#"><i class="fab fa-tiktok"></i></a>
-        </div>
-        <div class="footer-logo">
-            <span>Djati DATA</span>
-            <small>UIN Sunan Gunung Djati</small>
-        </div>
-        <div class="footer-copyright">
-            <p>&copy; Kelompok 6, Sistem Informasi</p>
+        <div class="footer-content">
+            <div class="footer-social">
+                <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-tiktok"></i></a>
+            </div>
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <img src="images/Logouin.png" alt="Logo UIN" style="width: 100%; height: 100%; object-fit: contain;" />
+                </div>
+                <div class="footer-text">
+                    <h3>Djati DATA</h3>
+                    <p>UIN Sunan Gunung Djati</p>
+                </div>
+            </div>
+            <div class="footer-contact">
+                <i class="fas fa-copyright"></i>
+                <span>Kelompok 6, Sistem Informasi</span>
+            </div>
         </div>
     </footer>
 

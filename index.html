@@ -10,34 +10,44 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
 
-    <header class="navbar">
-        <div class="container">
-            <div class="logo">
-                <img src="images/lg_navbar.png" alt="Djati Data Logo">
-                <div class="logo-text">
-                    <span>DJATI DATA</span>
-                    <small>UIN Sunan Gunung Djati</small>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <div class="logo">
+                    <img src="images/Logouin.png" alt="Logo UIN" style="width: 100%; height: 100%; object-fit: contain;" />
+                </div>
+                <div class="brand-text">
+                    <h2>Djati DATA</h2>
+                    <p>UIN Sunan Gunung Djati</p>
                 </div>
             </div>
-            <nav class="nav-links">
-                <ul>
-                    <li><a href="#">Beranda</a></li>
-                    <li><a href="dashboard.html">Dashboard</a></li>
-                    <li><a href="#">Data</a></li>
-                </ul>
-            </nav>
-            <a href="login.html" class="btn-login">Log In</a>
-        </div>
+            <div class="nav-menu">
+                <a href="#" class="nav-link">Beranda</a>
+                <a href="#" class="nav-link">Dashboard</a>
+                <a href="#" class="nav-link">Data</a>
+                <button class="login-btn">Log In</button>
+            </div>
+        </nav>
     </header>
 
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg">
+            <div class="hero-slider">
+                <img src="images/fotobg1.png" class="slide active">
+                <img src="images/fotobg2.png" class="slide">
+                <img src="images/fotobg3.png" class="slide">
+            </div>
+        </div>
+    </section>
+
     <main>
-        <section class="hero-section">
-            </section>
 
         <div class="main-content">
             <section id="grafik" class="content-section">
@@ -97,23 +107,27 @@
         </div>
     </main>
 
+    <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-socials">
-                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+        <div class="footer-content">
+            <div class="footer-social">
+                <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-tiktok"></i></a>
             </div>
-            <div class="footer-logo">
-                <img src="images/lg_navbar.png" alt="Djati Data Logo">
-                <div class="logo-text">
-                    <span>DJATI DATA</span>
-                    <small>UIN Sunan Gunung Djati</small>
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <img src="images/Logouin.png" alt="Logo UIN" style="width: 100%; height: 100%; object-fit: contain;" />
+                </div>
+                <div class="footer-text">
+                    <h3>Djati DATA</h3>
+                    <p>UIN Sunan Gunung Djati</p>
                 </div>
             </div>
-            <div class="footer-copyright">
-                <p>© Kelompok 6, Sistem Informasi</p>
+            <div class="footer-contact">
+                <i class="fas fa-copyright"></i>
+                <span>Kelompok 6, Sistem Informasi</span>
             </div>
         </div>
     </footer>

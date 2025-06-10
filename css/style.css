@@ -1,133 +1,256 @@
-/* General Styling */
-body {
-    font-family: 'Poppins', sans-serif;
+* {
     margin: 0;
     padding: 0;
-    background-color: #f0f2f5; /* Light gray background */
-    color: #333;
+    box-sizing: border-box;
 }
 
-/* Navbar */
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    background: #fff
+    min-height: 100vh;
+}
+
+/* Header Styles */
+.header {
+    background: #0D3D5F;
+    padding: 0.5rem 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1000;
+}
+
 .navbar {
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 56px;
-    padding: 15px 5%;
-    background-color: #0D3D5F;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 0 1rem;
 }
 
-.navbar .logo {
+.nav-brand {
     display: flex;
     align-items: center;
+    gap: 0.5rem;
 }
 
-.navbar .logo img {
-    margin-right: 10px;
-}
-
-.navbar .logo span {
-    font-weight: 700;
-    color: #fff;
-    font-size: 1.2em;
-}
-
-.navbar .logo small {
-    margin-left: 5px;
-    color: #fff;
-    font-size: 0.8em;
-}
-
-.nav-links ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+.logo {
+    width: 60px;
+    height: 60px;
     display: flex;
     align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+    transition: transform 0.3s ease;
 }
 
-.nav-links ul li {
-    margin-left: 30px;
+.logo:hover {
+    transform: rotate(15deg) scale(1.1);
 }
 
-.nav-links ul li a {
-    text-decoration: none;
-    color: #fff;
+.brand-text h2 {
+    color: white;
+    font-size: 1.6rem;
     font-weight: 500;
-    transition: color 0.3s ease;
+    margin-bottom: -0.1rem;
 }
 
-.nav-links ul li a:hover {
-    color: #808080;
+.brand-text p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.8rem;
+    font-weight: 400;
+    font-style: medium;
+    font-family: 'EB Garamond', serif;
 }
 
-.nav-links .btn-login {
-    background-color: #fff;
-    color: #111;
-    padding: 8px 15px;
-    border-radius: 10px;
-    transition: background-color 0.3s ease;
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
-.nav-links .btn-login:hover {
-    background-color: #6292B4;
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-weight: 450;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-link:hover {
+    opacity: 50%;
+    transform: translateY(-2px);
+}
+
+.login-btn {
+    background: white;
+    color: #000;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.login-btn:hover {
+    background: #6292B4;
     color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    height: 60vh;
+    background: #0D3D5F:
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    animation: float 20s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+.hero-slider {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+
+.hero-title {
+    font-size: 4rem;
+    font-weight: 700;
+    color: #0D3D5F;
+    text-align: center;
+    margin-bottom: 3rem;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    animation: fadeInUp 1s ease-out;
+    z-index: 2;
+    position: relative;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Footer */
 .footer {
-    background-color: #333;
-    color: #fff;
-    padding: 30px 5%;
+    background: #0D3D5F;
+    padding: 2rem 0;
+    margin-top: 3rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    text-align: center;
+    padding: 0 2rem;
+    flex-wrap: wrap;
+    gap: 2rem;
 }
 
 .footer-social {
-    margin-bottom: 20px;
+    display: flex;
+    gap: 0rem;
 }
 
-.footer-social a {
-    color: #fff;
-    font-size: 1.5em;
-    margin: 0 10px;
-    text-decoration: none;
-    transition: color 0.3s ease;
+.social-link {
+    width: auto;
+    height: auto;
+    font-size: 1.5rem;
+    color: white;
+    margin-right: 0.5rem;
+    transition: all 0.3s ease;
 }
 
-.footer-social a:hover {
-    color: #007bff;
+.social-link:hover {
+    transform: translateY(-3px);
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
 .footer-logo {
+    width: 60px;
+    height: 60px;
     display: flex;
     align-items: center;
-    margin-bottom: 15px;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
 }
 
-.footer-logo img {
-    margin-right: 10px;
+.footer-text h3 {
+    color: white;
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin-bottom: -0.1rem;
 }
 
-.footer-logo span {
-    font-weight: 700;
-    color: #007bff;
-    font-size: 1.2em;
+.footer-text p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.8rem;
+    font-weight: 400;
+    font-style: medium;
+    font-family: 'EB Garamond', serif;
 }
 
-.footer-logo small {
-    margin-left: 5px;
-    color: #ccc;
-    font-size: 0.8em;
+.footer-contact {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.9rem;
 }
 
-.footer p {
-    font-size: 0.9em;
-    color: #ccc;
-}
 
 /* Basic JavaScript for carousel (optional, for simple scrolling) */
 /* Create a file named `script.js` if you want to implement this */
