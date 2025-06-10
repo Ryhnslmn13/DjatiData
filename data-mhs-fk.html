@@ -10,133 +10,143 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <header class="navbar">
-        <div class="logo">
-            <img src="images/lg_navbar.png" alt="Djati Data Logo"> <div class="logo-text">
-                <span>DJATI DATA</span>
-                <small>UIN Sunan Gunung Djati</small>
-            </div>
-        </div>
-        <nav class="nav-links">
-            <ul>
-                <li><a href="index.html">Beranda</a></li>
-                <li><a href="#">Dashboard</a></li>
-                <li><a href="login.html" class="active">Data</a></li> <li><a href="#" class="btn-login">Log In</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main class="data-page-main">
-        <section class="info-banner">
-            <div class="info-icon">
-                <i class="fas fa-graduation-cap"></i>
-            </div>
-            <div class="info-content">
-                <h2>Jumlah Data Mahasiswa Terdaftar per Fakultas</h2>
-                <p>Jumlah data mahasiswa yang masih aktif dalam semester masa studi maksimal. Contoh pada semester akademik 2024/2025 genap, dihitung dari jumlah mahasiswa terdaftar dari 2024.</p>
-            </div>
-        </section>
-
-        <section class="data-table-section">
-            <div class="card data-table-card">
-                <h3>Jumlah Data Mahasiswa</h3>
-                <div class="table-responsive">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Tahun Ajaran</th>
-                                <th>Fakultas</th>
-                                <th>Nama Fakultas</th>
-                                <th>Jumlah Mahasiswa</th>
-                                <th>Created_Date</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>2024/2025 Genap</td>
-                                <td>FST</td>
-                                <td>Fakultas Sains dan Teknologi</td>
-                                <td>1800</td>
-                                <td>25/05/25 19.00</td>
-                            </tr>
-                            <tr>
-                                <td>2024/2025 Genap</td>
-                                <td>FTK</td>
-                                <td>Fakultas Tarbiyah dan Keguruan</td>
-                                <td>2000</td>
-                                <td>25/05/25 19.00</td>
-                            </tr>
-                            <tr>
-                                <td>2024/2025 Genap</td>
-                                <td>FAD</td>
-                                <td>Fakultas Adab dan Humaniora</td>
-                                <td>1100</td>
-                                <td>25/05/25 19.00</td>
-                            </tr>
-                            <tr>
-                                <td>2024/2025 Genap</td>
-                                <td>FSH</td>
-                                <td>Fakultas Syariah dan Hukum</td>
-                                <td>1000</td>
-                                <td>25/05/25 19.00</td>
-                            </tr>
-                            <tr>
-                                <td>2024/2025 Genap</td>
-                                <td>FPS</td>
-                                <td>Fakultas Psikologi</td>
-                                <td>800</td>
-                                <td>25/05/25 19.00</td>
-                            </tr>
-                            <tr>
-                                <td>2024/2025 Genap</td>
-                                <td>FISIP</td>
-                                <td>Fakultas Ilmu Sosial dan Ilmu Politik</td>
-                                <td>1700</td>
-                                <td>25/05/25 19.00</td>
-                            </tr>
-                            <tr>
-                                <td>2024/2025 Genap</td>
-                                <td>FU</td>
-                                <td>Fakultas Ushuluddin</td>
-                                <td>980</td>
-                                <td>25/05/25 19.00</td>
-                            </tr>
-                            <tr>
-                                <td>2024/2025 Genap</td>
-                                <td>FDK</td>
-                                <td>Fakultas Dakwah dan Komunikasi</td>
-                                <td>1400</td>
-                                <td>25/05/25 19.00</td>
-                            </tr>
-                        </tbody>
-                    </table>
+    <div class="site-wrapper">
+        <header class="header">
+            <nav class="navbar">
+                <div class="nav-brand">
+                    <div class="logo">
+                        <img src="images/lg_navbar.png" alt="Logo UIN" style="width: 100%; height: 100%; object-fit: contain;" />
+                    </div>
+                    <div class="brand-text">
+                        <h2>Djati DATA</h2>
+                        <p>UIN Sunan Gunung Djati</p>
+                    </div>
                 </div>
-                <div class="table-footer">
-                    <button class="download-button">
-                        Download Dataset <i class="fas fa-chevron-down"></i>
-                    </button>
+                <div class="nav-menu">
+                    <a href="index.html" class="nav-link">Beranda</a>
+                    <a href="dashboard.html" class="nav-link">Dashboard</a>
+                    <a href="data.html" class="nav-link">Data</a>
+                    <a href="login.html" class="login-btn">Log In</a>
                 </div>
-            </div>
-        </section>
-    </main>
+            </nav>
+        </header>
 
+        <main class="data-page-main">
+            <section class="info-banner">
+                <div class="info-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <div class="info-content">
+                    <h2>Jumlah Data Mahasiswa Terdaftar per Fakultas</h2>
+                    <p>Jumlah data mahasiswa yang masih aktif dalam semester masa studi maksimal. Contoh pada semester akademik 2024/2025 genap, dihitung dari jumlah mahasiswa terdaftar dari 2024.</p>
+                </div>
+            </section>
+
+            <section class="data-table-section">
+                <div class="data-summary-card-wrapper">
+                    <h3>Jumlah Data Mahasiswa</h3>
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Tahun Ajaran</th>
+                                    <th>Fakultas</th>
+                                    <th>Nama Fakultas</th>
+                                    <th>Jumlah Mahasiswa</th>
+                                    <th>Created_Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>2024/2025 Genap</td>
+                                    <td>FST</td>
+                                    <td>Fakultas Sains dan Teknologi</td>
+                                    <td>1800</td>
+                                    <td>25/05/25 19.00</td>
+                                </tr>
+                                <tr>
+                                    <td>2024/2025 Genap</td>
+                                    <td>FTK</td>
+                                    <td>Fakultas Tarbiyah dan Keguruan</td>
+                                    <td>2000</td>
+                                    <td>25/05/25 19.00</td>
+                                </tr>
+                                <tr>
+                                    <td>2024/2025 Genap</td>
+                                    <td>FAD</td>
+                                    <td>Fakultas Adab dan Humaniora</td>
+                                    <td>1100</td>
+                                    <td>25/05/25 19.00</td>
+                                </tr>
+                                <tr>
+                                    <td>2024/2025 Genap</td>
+                                    <td>FSH</td>
+                                    <td>Fakultas Syariah dan Hukum</td>
+                                    <td>1000</td>
+                                    <td>25/05/25 19.00</td>
+                                </tr>
+                                <tr>
+                                    <td>2024/2025 Genap</td>
+                                    <td>FPS</td>
+                                    <td>Fakultas Psikologi</td>
+                                    <td>800</td>
+                                    <td>25/05/25 19.00</td>
+                                </tr>
+                                <tr>
+                                    <td>2024/2025 Genap</td>
+                                    <td>FISIP</td>
+                                    <td>Fakultas Ilmu Sosial dan Ilmu Politik</td>
+                                    <td>1700</td>
+                                    <td>25/05/25 19.00</td>
+                                </tr>
+                                <tr>
+                                    <td>2024/2025 Genap</td>
+                                    <td>FU</td>
+                                    <td>Fakultas Ushuluddin</td>
+                                    <td>980</td>
+                                    <td>25/05/25 19.00</td>
+                                </tr>
+                                <tr>
+                                    <td>2024/2025 Genap</td>
+                                    <td>FDK</td>
+                                    <td>Fakultas Dakwah dan Komunikasi</td>
+                                    <td>1400</td>
+                                    <td>25/05/25 19.00</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="table-footer">
+                        <button class="download-button">
+                            Download Dataset <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
     <footer class="footer">
-        <div class="footer-social">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
-            <a href="#"><i class="fab fa-tiktok"></i></a>
-        </div>
-        <div class="footer-logo">
-            <img src="https://via.placeholder.com/40x40" alt="Djati Data Logo"> <div class="logo-text">
-                <span>DJATI DATA</span>
-                <small>UIN Sunan Gunung Djati</small>
+        <div class="footer-content">
+            <div class="footer-social">
+                <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-tiktok"></i></a>
+            </div>
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <img src="images/lg_navbar.png" alt="Djati Data Logo"> </div>
+                <div class="footer-text">
+                    <h3>DJATI DATA</h3>
+                    <p>UIN Sunan Gunung Djati</p>
+                </div>
+            </div>
+            <div class="footer-contact">
+                &copy; Kelompok 6, Sistem Informasi
             </div>
         </div>
-        <p>&copy; Kelompok 6, Sistem Informasi</p>
     </footer>
 
     <script src="js/data-mhs-fk.js"></script>
-    <script src="js/script.js"></script>
 </body>
 </html>
