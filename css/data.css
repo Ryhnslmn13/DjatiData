@@ -32,11 +32,11 @@
 .search-input {
     width: 100%;
     padding: 1rem 1rem 1rem 3rem;
-    border: 2px solid #e5e7eb;
+    border: none;
     border-radius: 10px;
     font-size: 1rem;
     font-family: 'Poppins', sans-serif;
-    background: white;
+    background: #D9D9D9;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
@@ -59,10 +59,8 @@
 
 /* Cards Container */
 .cards-container {
-    display: grid;
-    flex-direction: column;
     display: flex;
-    gap: 2rem;
+    flex-direction: column;
     gap: 2rem;
     margin-top: 2rem;
 }
@@ -70,14 +68,16 @@
 /* Data Cards */
 .data-card {
     width: 100%;
+    min-height: 170px;
     background: white;
     border-radius: 20px;
-    padding: 2rem;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    padding: 1.5rem 2rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12), 0 -4px 18px rgba(0, 0, 0, 0.08);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    border: 1px solid rgba(0, 0, 0, 0.05);
     position: relative;
     overflow: hidden;
+    display: flex;
+    align-items: center;
 }
 
 .data-card::before {
@@ -96,98 +96,93 @@
 .data-card:hover {
     transform: translateY(-10px) scale(1.02);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-    border-color: rgba(59, 130, 246, 0.2);
 }
 
 .data-card:hover::before {
     opacity: 1;
 }
 
-.data-card:hover .card-icon {
-    transform: scale(1.1) rotate(5deg);
-    background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
-}
-
-.card-icon {
-    width: 60px;
-    height: 60px;
-    background: linear-gradient(135deg, #2c5aa0 0%, #1e3a8a 100%);
-    border-radius: 15px;
+.card-icon-img {
+    width: 100px;
+    height: 100px;
+    flex-shrink: 0;
+    margin-right: 1.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
-    font-size: 24px;
-    margin-bottom: 1.5rem;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     z-index: 2;
-    box-shadow: 0 4px 15px rgba(44, 90, 160, 0.3);
+}
+
+.card-icon-img img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
 }
 
 .card-content {
+    flex: 1;
     position: relative;
     z-index: 2;
 }
 
 .card-title {
-    font-size: 1.25rem;
+    color: #000;
     font-weight: 600;
-    color: #1f2937;
-    margin-bottom: 0.75rem;
-    line-height: 1.4;
-    transition: color 0.3s ease;
-}
-
-.data-card:hover .card-title {
-    color: #1e40af;
+    font-size: 1.5rem;
+    margin: 0 0 0.5rem 0;
 }
 
 .card-description {
-    color: #6b7280;
-    font-size: 0.95rem;
-    margin-bottom: 1.5rem;
-    line-height: 1.6;
+    color: #858585;
+    font-weight: 400;
+    font-size: 0.9rem;
+    margin: 0 0 1rem 0;
+    line-height: 1.4;
 }
 
 .preview-link {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    color: #3b82f6;
-    text-decoration: none;
-    font-weight: 500;
+    margin-top: 0.5rem;
+}
+
+.preview-icon {
+    width: 16px;
+    height: 16px;
+}
+
+.preview-text {
     font-size: 0.9rem;
-    transition: all 0.3s ease;
+    font-weight: 500;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.preview-text .gray {
+    color: #858585;
+    font-weight: 400;
+}
+
+.preview-text .blue {
+    color: #266CA9;
+    text-decoration: none;
     position: relative;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    z-index: 3;
 }
 
-.preview-link::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: linear-gradient(90deg, #3b82f6, #8b5cf6);
-    transition: width 0.3s ease;
+.preview-text .blue:hover {
+    color: #1e5a8a;
+    text-decoration: underline;
+    text-underline-offset: 2px;
 }
 
-.preview-link:hover {
-    color: #1e40af;
-    transform: translateX(5px);
-}
-
-.preview-link:hover::after {
-    width: 100%;
-}
-
-.preview-link i {
-    transition: transform 0.3s ease;
-}
-
-.preview-link:hover i {
-    transform: scale(1.1);
+.preview-text .blue:active {
+    transform: translateY(1px);
 }
 
 /* Bubble Animation */
@@ -205,12 +200,6 @@
         opacity: 1;
     }
 }
-
-.data-card:hover {
-    animation: bubble 0.6s ease-in-out;
-}
-
-
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -237,12 +226,18 @@
     }
     
     .cards-container {
-        grid-template-columns: 1fr;
         gap: 1.5rem;
     }
     
     .data-card {
         padding: 1.5rem;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .card-icon-img {
+        margin-right: 0;
+        margin-bottom: 1rem;
     }
     
     .footer-content {
