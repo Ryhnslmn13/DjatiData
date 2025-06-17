@@ -141,6 +141,7 @@ body {
 .dashboard-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 25px rgba(90, 143, 158, 0.4);
+    background-color: #0D3D5F;
 }
 
 .dashboard-card .icondb {

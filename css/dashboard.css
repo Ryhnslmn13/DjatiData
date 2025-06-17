@@ -49,11 +49,11 @@
 }
 
 .dashboard-card {
-    background: linear-gradient(135deg, #6292B4 0%, #4A7BA7 100%);
+    background: #6292B4;
     padding: 25px 20px;
     width: 200px;
-    height: 200px;
-    border-radius: 20px;
+    height: 250px;
+    border-radius: 30px;
     color: white;
     text-decoration: none;
     text-align: center;
@@ -62,18 +62,18 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 4px 15px rgba(98, 146, 180, 0.3);
+    box-shadow: 5px 5px 10px rgba(40, 40, 41, 0.3);
 }
 
 .dashboard-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 12px 25px rgba(98, 146, 180, 0.4);
-    background: linear-gradient(135deg, #4A7BA7 0%, #6292B4 100%);
+    box-shadow: 0 12px 25px rgba(40, 40, 41, 0.3);
+    background: #0D3D5F;
 }
 
 .dashboard-card img {
-    width: 60px;
-    height: 60px;
+    width: 90px;
+    height: 90px;
     margin-bottom: 15px;
     filter: brightness(0) invert(1); /* Membuat gambar menjadi putih */
 }
