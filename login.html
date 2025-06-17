@@ -1,44 +1,43 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DJATI DATA - UIN Sunan Gunung Djati</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Login DJATI DATA</title>
     
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/login.css"/>
 </head>
 <body>
+    <!-- Tombol kembali -->
+    <button class="back-button" onclick="window.history.back()">
+        <i class="fas fa-arrow-left"></i>
+    </button>
+
     <div class="container">
         <div class="login-card">
         <div class="login-form">
             <h2>Log in</h2>
+
             <label for="username">Username</label>
             <input type="text" id="username" placeholder="Enter username"/>
 
             <label for="password">Password</label>
             <div class="password-container">
-            <input type="password" id="password" placeholder="Enter password"/>
-            <span class="toggle-password">👁️</span>
+                <input type="password" id="password" placeholder="Enter password"/>
+                <span class="toggle-password">
+                    <i class="fas fa-eye-slash" id="eye-icon"></i>
+                </span>
             </div>
-
             <button type="submit">Log in</button>
         </div>
-        </div>
     </div>
-    <script>
-        const togglePassword = document.querySelector(".toggle-password");
-        const passwordField = document.getElementById("password");
+</div>
 
-        togglePassword.addEventListener("click", () => {
-            const type = passwordField.getAttribute("type") === "password" ? "text" : "password";
-            passwordField.setAttribute("type", type);
-        });
-    </script>
+<script src="js/login.js"></script>
 </body>
 </html>
