@@ -91,6 +91,49 @@
     text-align: center;
 }
 
+/* Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #B1C8DA;
+    padding: 40px 30px;
+    border-radius: 30px;
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    font-family: 'Poppins', sans-serif;
+}
+
+.modal-content img {
+    width: 100px;
+    margin-bottom: 15px;
+}
+
+.modal-content h2 {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.modal-content p {
+    font-size: 0.95em;
+    color: #333;
+}
+
 
 /* Responsive Design (Adaptasi & Penambahan) */
 @media (max-width: 992px) {
