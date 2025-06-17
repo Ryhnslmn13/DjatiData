@@ -4,6 +4,11 @@ document.addEventListener('DOMContentLoaded', () => {
     let dropdownMenu = null; // To store the dropdown element
 
     const createDropdownMenu = () => {
+        // Hapus dropdown yang sudah ada jika ada
+        if (dropdownMenu) {
+            dropdownMenu.remove();
+        }
+
         dropdownMenu = document.createElement('div');
         dropdownMenu.classList.add('download-dropdown-menu');
         dropdownMenu.innerHTML = `
@@ -11,75 +16,98 @@ document.addEventListener('DOMContentLoaded', () => {
             <a href="#" data-format="excel">Download Excel</a>
             <a href="#" data-format="pdf">Download PDF</a>
         `;
-        // Append it near the button, or at the end of body for absolute positioning
-        downloadButton.parentNode.insertBefore(dropdownMenu, downloadButton.nextSibling);
+        
+        // Append dropdown ke parent element yang sama dengan button (table-footer)
+        downloadButton.parentElement.appendChild(dropdownMenu);
 
-        // Position the dropdown below the button
-        const buttonRect = downloadButton.getBoundingClientRect();
-        dropdownMenu.style.position = 'absolute';
-        dropdownMenu.style.top = `${buttonRect.bottom + 5}px`; // 5px below button
-        dropdownMenu.style.left = `${buttonRect.left}px`;
-        dropdownMenu.style.minWidth = `${buttonRect.width}px`; // Match button width
-        dropdownMenu.style.zIndex = '1000'; // Ensure it's on top
+        // Event listener untuk pilihan download
+        dropdownMenu.addEventListener('click', handleDownloadSelection);
     };
 
     const toggleDropdown = (event) => {
         event.stopPropagation(); // Prevent click from immediately closing it
+        
         if (!dropdownMenu) {
             createDropdownMenu();
         }
-        dropdownMenu.classList.toggle('show');
-
-        // Close dropdown if clicked outside
-        if (dropdownMenu.classList.contains('show')) {
-            document.addEventListener('click', closeDropdownOutside);
-            dropdownMenu.addEventListener('click', handleDownloadSelection); // Handle clicks inside dropdown
-        } else {
+        
+        const isShowing = dropdownMenu.classList.contains('show');
+        
+        if (isShowing) {
+            dropdownMenu.classList.remove('show');
             document.removeEventListener('click', closeDropdownOutside);
-            dropdownMenu.removeEventListener('click', handleDownloadSelection);
+        } else {
+            dropdownMenu.classList.add('show');
+            document.addEventListener('click', closeDropdownOutside);
         }
     };
 
     const closeDropdownOutside = (event) => {
-        if (dropdownMenu && !dropdownMenu.contains(event.target) && event.target !== downloadButton) {
+        if (dropdownMenu && 
+            !dropdownMenu.contains(event.target) && 
+            event.target !== downloadButton && 
+            !downloadButton.contains(event.target)) {
             dropdownMenu.classList.remove('show');
             document.removeEventListener('click', closeDropdownOutside);
-            dropdownMenu.removeEventListener('click', handleDownloadSelection);
         }
     };
 
     const handleDownloadSelection = (event) => {
         if (event.target.tagName === 'A') {
             event.preventDefault(); // Prevent default link behavior
+            event.stopPropagation(); // Stop event bubbling
+            
             const format = event.target.dataset.format;
             alert(`Downloading dataset in ${format.toUpperCase()} format... (This is a placeholder)`);
+            
             // Here you would typically trigger an actual file download
             // e.g., window.location.href = `/api/download-data?format=${format}`;
-            dropdownMenu.classList.remove('show'); // Close dropdown after selection
+            
+            // Close dropdown after selection
+            dropdownMenu.classList.remove('show');
+            document.removeEventListener('click', closeDropdownOutside);
         }
     };
 
+    // Event listener untuk button download
     if (downloadButton) {
         downloadButton.addEventListener('click', toggleDropdown);
     }
 
     // 2. Menandai Navigasi Aktif
-    const navLinks = document.querySelectorAll('.nav-links ul li a');
-    const currentPath = window.location.pathname; // e.g., /data-fakultas.html
+    const navLinks = document.querySelectorAll('.nav-menu .nav-link');
+    const currentPath = window.location.pathname;
 
     navLinks.forEach(link => {
         // Remove 'active' from all links first
         link.classList.remove('active');
 
-        // Check if the link's href matches the current path (or a relevant part)
-        // For 'data-fakultas.html', we check if the path contains 'data-fakultas'
-        // or if its innerText is 'Data' and it's linked to this page.
-        if (link.href.includes('data-mhs-fk.html') || (link.innerText === 'Data' && currentPath.includes('data-fakultas'))) {
+        // Check if the link's href matches the current path
+        const linkPath = new URL(link.href).pathname;
+        
+        // Untuk halaman data mahasiswa fakultas
+        if (currentPath.includes('data-mhs-fk.html') && linkPath.includes('data.html')) {
             link.classList.add('active');
         }
-        // If you have a specific home page like index.html, you can add:
-        // if (link.href.includes('index.html') && currentPath === '/' || currentPath.includes('index.html')) {
-        //     link.classList.add('active');
-        // }
+        // Untuk halaman lainnya
+        else if (linkPath === currentPath) {
+            link.classList.add('active');
+        }
+    });
+
+    // 3. Close dropdown ketika window di-resize
+    window.addEventListener('resize', () => {
+        if (dropdownMenu && dropdownMenu.classList.contains('show')) {
+            dropdownMenu.classList.remove('show');
+            document.removeEventListener('click', closeDropdownOutside);
+        }
+    });
+
+    // 4. Close dropdown dengan tombol Escape
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && dropdownMenu && dropdownMenu.classList.contains('show')) {
+            dropdownMenu.classList.remove('show');
+            document.removeEventListener('click', closeDropdownOutside);
+        }
     });
 });

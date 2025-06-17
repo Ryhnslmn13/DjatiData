@@ -21,16 +21,16 @@
 .info-icon {
     font-size: 4em;
     color: #0D3D5F;
-    /* For a more rounded look if needed */
-    /* background-color: #007bff; */
-    /* color: #fff; */
-    /* border-radius: 50%; */
-    /* padding: 15px; */
-    /* display: flex; */
-    /* align-items: center; */
-    /* justify-content: center; */
-    /* width: 80px; */
-    /* height: 80px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 120px;
+}
+
+.info-icon img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
 }
 
 .info-content h2 {
@@ -53,68 +53,99 @@
 }
 
 .data-table-card {
+    background-color: #ffffff;
+    border-radius: 20px;
     padding: 30px;
-    /* Inherits general .card styles, but we'll add specific table styles */
-    display: block; /* Override flex from .card if it causes issues */
-    text-align: left; /* Align text within card to left */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 50px;
 }
 
 .data-table-card h3 {
     font-size: 1.5em;
-    color: #333;
+    color: #000;
     margin-top: 0;
     margin-bottom: 25px;
     text-align: center; /* Center table title */
 }
 
+.data-table-card h3::after {
+    content: '';
+    display: block;
+    width: 350px;
+    height: 2px;
+    background-color: #0D3D5F;
+    margin: 0 auto; /* Pusatkan garis */
+}
+
 .table-responsive {
     overflow-x: auto; /* Make table horizontally scrollable on small screens */
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .data-table-card table {
     width: 100%;
-    border-collapse: collapse; /* Remove space between borders */
-    margin-top: 20px;
-}
-
-.data-table-card th, .data-table-card td {
-    border: 1px solid #ddd;
-    padding: 12px 15px;
-    text-align: left;
-    font-size: 0.9em;
+    border-collapse: separate;
+    border-spacing: 0 5px;
+    margin-top: 10px;
 }
 
 .data-table-card thead th {
     background-color: #f8f9fa; /* Light header background */
-    font-weight: 600;
-    color: #333;
+    padding: 12px;
+    font-weight: 300;
+    color: #5D5F60;
+    font-size: 0.9em;
+    text-align: left;
     white-space: nowrap; /* Prevent headers from wrapping */
+    border: none;
 }
 
-.data-table-card tbody tr:nth-child(even) {
-    background-color: #f2f2f2; /* Zebra striping for rows */
+/* Styling untuk setiap baris tbody dengan border dan border-radius */
+.data-table-card tbody tr {
+    background-color: #ffffff;
 }
 
-.data-table-card tbody tr:hover {
-    background-color: #e9e9e9; /* Hover effect for rows */
+.data-table-card tbody tr td {
+    background-color: #ffffff;
+    padding: 12px;
+    text-align: left;
+    font-size: 0.92em;
+    border-top: 1px solid #ababab;
+    border-bottom: 1px solid #ababab;
+    position: relative;
 }
 
-.data-table-card td:last-child,
-.data-table-card th:last-child {
+/* Border kiri untuk sel pertama */
+.data-table-card tbody tr td:first-child {
+    border-left: 1px solid #ababab;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+/* Border kanan untuk sel terakhir */
+.data-table-card tbody tr td:last-child {
+    border-right: 1px solid #ababab;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
     white-space: nowrap; /* Prevent date column from wrapping */
+}
+
+/* Zebra striping untuk baris genap */
+.data-table-card tbody tr:nth-child(even) td {
+    background-color: #f8fbff; /* Warna biru sangat muda untuk baris genap */
 }
 
 .table-footer {
     display: flex;
     justify-content: flex-end; /* Align button to the right */
     padding-top: 15px;
+    position: relative; /* Penting untuk dropdown positioning */
 }
 
 .download-button {
     background-color: #fff;
-    color: #007bff;
-    border: 1px solid #007bff;
+    color: #333;
+    border: 1px solid #D9D9D9;
     padding: 10px 20px;
     border-radius: 8px;
     font-size: 0.95em;
@@ -127,19 +158,23 @@
 
 .download-button:hover {
     background-color: #e7f2ff; /* Lighter blue on hover */
-    color: #0056b3;
+    color: #74C5FF;
 }
 
-/* Dropdown untuk tombol Download Dataset */
+/* Dropdown untuk tombol Download Dataset - PERBAIKAN POSISI */
 .download-dropdown-menu {
     display: none; /* Sembunyikan secara default */
     position: absolute;
+    top: 100%; /* Posisi tepat di bawah button */
+    right: 0; /* Align dengan sisi kanan button */
     background-color: #fff;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
+    min-width: 180px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.15);
+    z-index: 1000; /* Z-index tinggi agar di atas elemen lain */
     border-radius: 8px;
+    border: 1px solid #e0e0e0;
     overflow: hidden; /* Pastikan sudut membulat diterapkan ke children */
+    margin-top: 5px; /* Jarak kecil dari button */
 }
 
 .download-dropdown-menu.show {
@@ -147,24 +182,22 @@
 }
 
 .download-dropdown-menu a {
-    color: black;
+    color: #333;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
     font-size: 0.9em;
     transition: background-color 0.2s ease, color 0.2s ease;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.download-dropdown-menu a:last-child {
+    border-bottom: none; /* Hapus border untuk link terakhir */
 }
 
 .download-dropdown-menu a:hover {
-    background-color: #f1f1f1;
+    background-color: #f8fbff;
     color: #007bff;
-}
-
-/* Penyesuaian untuk tombol download agar bisa menempatkan dropdown secara relatif */
-.table-footer {
-    position: relative; /* Penting untuk menempatkan dropdown secara relatif terhadap footer tabel */
-    display: flex;
-    justify-content: flex-end;
 }
 
 /* Navbar active link style */
@@ -202,7 +235,12 @@
         font-size: 1.3em;
     }
 
-    .data-table-card th, .data-table-card td {
+    .data-table-card tbody td {
+        padding: 10px;
+        font-size: 0.85em;
+    }
+
+    .data-table-card thead th {
         padding: 10px;
         font-size: 0.85em;
     }
@@ -210,6 +248,13 @@
     .download-button {
         padding: 8px 15px;
         font-size: 0.9em;
+    }
+
+    /* Dropdown responsive */
+    .download-dropdown-menu {
+        right: 0;
+        left: auto;
+        min-width: 150px;
     }
 }
 
@@ -242,8 +287,20 @@
         font-size: 1.1em;
     }
 
-    .data-table-card th, .data-table-card td {
+    .data-table-card tbody td {
         padding: 8px;
         font-size: 0.8em;
+    }
+
+    .data-table-card thead th {
+        padding: 8px;
+        font-size: 0.8em;
+    }
+
+    /* Dropdown mobile */
+    .download-dropdown-menu {
+        right: 0;
+        left: auto;
+        min-width: 140px;
     }
 }
