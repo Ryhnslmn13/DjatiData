@@ -88,9 +88,11 @@ body {
 }
 
 .login-form button {
-  width: 100%;
+  width: 80%;
+  margin-left: 30px;
+  margin-top: 50px;
   padding: 12px;
-  background-color: #5a91b8;
+  background-color: #6292B4;
   border: none;
   border-radius: 10px;
   color: white;
@@ -99,5 +101,5 @@ body {
 }
 
 .login-form button:hover {
-  background-color: #4c82a3;
+  background-color: #0D3D5F;
 }
