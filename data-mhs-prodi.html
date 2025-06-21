@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Mahasiswa per Fakultas - DJATI DATA</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/data-mhs-prodi.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="site-wrapper">
+        <header class="header">
+            <nav class="navbar">
+                <div class="nav-brand">
+                    <div class="logo">
+                        <img src="images/Logouin.png" alt="Logo UIN" style="width: 100%; height: 100%; object-fit: contain;" />
+                    </div>
+                    <div class="brand-text">
+                        <h2>Djati DATA</h2>
+                        <p>UIN Sunan Gunung Djati</p>
+                    </div>
+                </div>
+                <div class="nav-menu">
+                    <a href="index.html" class="nav-link">Beranda</a>
+                    <a href="dashboard.html" class="nav-link">Dashboard</a>
+                    <a href="data.html" class="nav-link">Data</a>
+                    <a href="login.html" class="login-btn">Log In</a>
+                </div>
+            </nav>
+        </header>
+
+        <main class="data-page-main">
+            <section class="info-banner">
+                <div class="info-icon">
+                    <img src="images/logostudent.png" alt="Ikon Mahasiswa">
+                </div>
+                <div class="info-content">
+                    <h2>Jumlah Data Mahasiswa Terdaftar per Program Studi</h2>
+                    <p>Jumlah data mahasiswa yang masih aktif dalam semester masa studi maksimal. Contoh pada semester akademik 2024/2025 genap, dihitung dari jumlah mahasiswa terdaftar dari 2024.</p>
+                </div>
+            </section>
+
+            <section class="data-table-section">
+                <div class="data-table-card">
+                    <div class="table-header">
+                        <h3>Jumlah Data Mahasiswa</h3>
+                        <div class="faculty-dropdown" id="facultyDropdown">
+                            <select class="faculty-select" id="facultySelect">
+                                <option value="FST">FST</option>
+                                <option value="FTK">FTK</option>
+                                <option value="FAD">FAD</option>
+                                <option value="FSH">FSH</option>
+                                <option value="FPS">FPS</option>
+                                <option value="FISIP">FISIP</option>
+                                <option value="FU">FU</option>
+                                <option value="FDK">FDK</option>
+                                <option value="FEBI">FEBI</option>
+                            </select>
+                            <i class="fas fa-chevron-down faculty-dropdown-icon"></i>
+                        </div>
+                    </div>
+                    <div class="table-responsive">
+                        <table id="dataTable">
+                            <thead>
+                                <tr>
+                                    <th>Tahun Ajaran</th>
+                                    <th>Nama Fakultas</th>
+                                    <th>Jenjang</th>
+                                    <th>Prodi</th>
+                                    <th>Jumlah Mahasiswa</th>
+                                    <th>Created_Date</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tableBody">
+                                <!-- Data will be populated by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="table-footer">
+                        <button class="download-button" id="downloadButton">
+                            Download Dataset <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="download-dropdown-menu" id="downloadDropdown">
+                            <a href="#" data-format="csv">Download CSV</a>
+                            <a href="#" data-format="excel">Download Excel</a>
+                            <a href="#" data-format="pdf">Download PDF</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-social">
+                <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-tiktok"></i></a>
+            </div>
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <img src="images/Logouin.png" alt="Djati Data Logo"> </div>
+                <div class="footer-text">
+                    <h3>DJATI DATA</h3>
+                    <p>UIN Sunan Gunung Djati</p>
+                </div>
+            </div>
+            <div class="footer-contact">
+                &copy; Kelompok 6, Sistem Informasi
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/data-mhs-prodi.js"></script>
+</body>
+</html>

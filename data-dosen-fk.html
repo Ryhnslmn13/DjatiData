@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Mahasiswa per Fakultas - DJATI DATA</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/data-dosen-fk.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="site-wrapper">
+        <header class="header">
+            <nav class="navbar">
+                <div class="nav-brand">
+                    <div class="logo">
+                        <img src="images/Logouin.png" alt="Logo UIN" style="width: 100%; height: 100%; object-fit: contain;" />
+                    </div>
+                    <div class="brand-text">
+                        <h2>Djati DATA</h2>
+                        <p>UIN Sunan Gunung Djati</p>
+                    </div>
+                </div>
+                <div class="nav-menu">
+                    <a href="index.html" class="nav-link">Beranda</a>
+                    <a href="dashboard.html" class="nav-link">Dashboard</a>
+                    <a href="data.html" class="nav-link">Data</a>
+                    <a href="login.html" class="login-btn">Log In</a>
+                </div>
+            </nav>
+        </header>
+
+        <main class="data-page-main">
+            <section class="info-banner">
+                <div class="info-icon">
+                    <img src="images/logopeople.png" alt="Ikon Mahasiswa">
+                </div>
+                <div class="info-content">
+                    <h2>Jumlah Data Dosen per Fakultas</h2>
+                    <p>Jumlah data dosen yang terdaftar di setiap fakultas.</p>
+                </div>
+            </section>
+
+            <section class="data-table-section">
+                <div class="data-table-card">
+                    <h3>Jumlah Data Dosen</h3>
+                    <div class="table-responsive">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Fakultas</th>
+                                    <th>Nama Fakultas</th>
+                                    <th>Jumlah Dosen</th>
+                                    <th>Created_Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>FST</td>
+                                    <td>Fakultas Sains dan Teknologi</td>
+                                    <td>90</td>
+                                    <td>25/05/25 19.00</td>
+                                </tr>
+                                <tr>
+                                    <td>FTK</td>
+                                    <td>Fakultas Tarbiyah dan Keguruan</td>
+                                    <td>180</td>
+                                    <td>25/05/25 19.00</td>
+                                </tr>
+                                <tr>
+                                    <td>FAD</td>
+                                    <td>Fakultas Adab dan Humaniora</td>
+                                    <td>100</td>
+                                    <td>25/05/25 19.00</td>
+                                </tr>
+                                <tr>
+                                    <td>FSH</td>
+                                    <td>Fakultas Syariah dan Hukum</td>
+                                    <td>75</td>
+                                    <td>25/05/25 19.00</td>
+                                </tr>
+                                <tr>
+                                    <td>FPS</td>
+                                    <td>Fakultas Psikologi</td>
+                                    <td>30</td>
+                                    <td>25/05/25 19.00</td>
+                                </tr>
+                                <tr>
+                                    <td>FISIP</td>
+                                    <td>Fakultas Ilmu Sosial dan Ilmu Politik</td>
+                                    <td>55</td>
+                                    <td>25/05/25 19.00</td>
+                                </tr>
+                                <tr>
+                                    <td>FU</td>
+                                    <td>Fakultas Ushuluddin</td>
+                                    <td>50</td>
+                                    <td>25/05/25 19.00</td>
+                                </tr>
+                                <tr>
+                                    <td>FDK</td>
+                                    <td>Fakultas Dakwah dan Komunikasi</td>
+                                    <td>60</td>
+                                    <td>25/05/25 19.00</td>
+                                </tr>
+                                <tr>
+                                    <td>FDK</td>
+                                    <td>Fakultas Ekonomi dan Bisnis Islam</td>
+                                    <td>70</td>
+                                    <td>25/05/25 19.00</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="table-footer">
+                        <button class="download-button" id="downloadButton">
+                            Download Dataset <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="download-dropdown-menu" id="downloadDropdown">
+                            <a href="#" data-format="csv">Download CSV</a>
+                            <a href="#" data-format="excel">Download Excel</a>
+                            <a href="#" data-format="pdf">Download PDF</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-social">
+                <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-tiktok"></i></a>
+            </div>
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <img src="images/Logouin.png" alt="Djati Data Logo"> </div>
+                <div class="footer-text">
+                    <h3>DJATI DATA</h3>
+                    <p>UIN Sunan Gunung Djati</p>
+                </div>
+            </div>
+            <div class="footer-contact">
+                &copy; Kelompok 6, Sistem Informasi
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/data-dosen-fk.js"></script>
+</body>
+</html>

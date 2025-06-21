@@ -1,0 +1,360 @@
+/* Data Page Specific Styles */
+.data-page-main {
+    padding: 30px 5%; /* Padding for the main content area */
+    background-color: #f0f2f5;
+}
+
+.info-banner {
+    background-color: #89ADC7; /* Light blue background */
+    border-radius: 15px;
+    padding: 25px 50px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    margin-bottom: 40px;
+    max-width: 1150px; /* Limit width */
+    margin-left: auto;
+    margin-right: auto; /* Center the banner */
+}
+
+.info-icon {
+    font-size: 4em;
+    color: #0D3D5F;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 120px;
+}
+
+.info-icon img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.info-content h2 {
+    font-size: 1.8em;
+    color: #2c3e50; /* Darker text for heading */
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.info-content p {
+    font-size: 0.95em;
+    color: #555;
+    line-height: 1.5;
+}
+
+.data-table-section {
+    max-width: 1300px; /* Match banner width */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.data-table-card {
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 50px;
+}
+
+.data-table-card h3 {
+    font-size: 1.5em;
+    color: #000;
+    margin-top: 0;
+    margin-bottom: 25px;
+    text-align: center; /* Center table title */
+}
+
+.data-table-card h3::after {
+    content: '';
+    display: block;
+    width: 350px;
+    height: 2px;
+    background-color: #0D3D5F;
+    margin: 0 auto; /* Pusatkan garis */
+}
+
+/* Faculty Dropdown Styles */
+.faculty-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.faculty-select {
+    background-color: #f8f9fa;
+    border: 2px solid #8B8B8B;
+    border-radius: 8px;
+    padding: 8px 35px 8px 12px;
+    font-size: 0.8em;
+    color: #333;
+    cursor: pointer;
+    appearance: none;
+    min-width: 90px;
+    transition: all 0.3s ease;
+}
+
+.faculty-select:hover {
+    background-color: #f8f9fa;
+    border-color: #C4CBDF;
+}
+
+.faculty-select:focus {
+    outline: none;
+    border-color: #C4CBDF;
+    box-shadow: 0 0 0 2px rgba(116, 197, 255, 0.2);
+}
+
+
+.faculty-dropdown-icon {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #000;
+    pointer-events: none;
+    transition: transform 0.3s ease;
+    font-size: 0.8em;
+}
+
+.faculty-dropdown.open .faculty-dropdown-icon {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.table-responsive {
+    overflow-x: auto; /* Make table horizontally scrollable on small screens */
+    margin-bottom: 15px;
+}
+
+.data-table-card table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 5px;
+    margin-top: 10px;
+}
+
+.data-table-card thead th {
+    background-color: #f8f9fa; /* Light header background */
+    padding: 12px;
+    font-weight: 300;
+    color: #5D5F60;
+    font-size: 0.9em;
+    text-align: left;
+    white-space: nowrap; /* Prevent headers from wrapping */
+    border: none;
+}
+
+/* Styling untuk setiap baris tbody dengan border dan border-radius */
+.data-table-card tbody tr {
+    background-color: #ffffff;
+}
+
+.data-table-card tbody tr td {
+    background-color: #ffffff;
+    padding: 12px;
+    text-align: left;
+    font-size: 0.92em;
+    border-top: 1px solid #ababab;
+    border-bottom: 1px solid #ababab;
+    position: relative;
+}
+
+/* Border kiri untuk sel pertama */
+.data-table-card tbody tr td:first-child {
+    border-left: 1px solid #ababab;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+/* Border kanan untuk sel terakhir */
+.data-table-card tbody tr td:last-child {
+    border-right: 1px solid #ababab;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    white-space: nowrap; /* Prevent date column from wrapping */
+}
+
+/* Zebra striping untuk baris genap */
+.data-table-card tbody tr:nth-child(even) td {
+    background-color: #f8fbff; /* Warna biru sangat muda untuk baris genap */
+}
+
+.table-footer {
+    display: flex;
+    justify-content: flex-end; /* Align button to the right */
+    padding-top: 15px;
+    position: relative; /* Penting untuk dropdown positioning */
+}
+
+.download-button {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #D9D9D9;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 0.95em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.download-button:hover {
+    background-color: #e7f2ff; /* Lighter blue on hover */
+    color: #74C5FF;
+}
+
+.download-button .fas {
+    transition: transform 0.3s ease;
+}
+
+.download-button.open .fas {
+    transform: rotate(180deg);
+}
+
+/* Dropdown untuk tombol Download Dataset - PERBAIKAN POSISI */
+.download-dropdown-menu {
+    display: none; /* Sembunyikan secara default */
+    position: absolute;
+    top: 100%; /* Posisi tepat di bawah button */
+    right: 0; /* Align dengan sisi kanan button */
+    background-color: #fff;
+    min-width: 180px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.15);
+    z-index: 1000; /* Z-index tinggi agar di atas elemen lain */
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    overflow: hidden; /* Pastikan sudut membulat diterapkan ke children */
+    margin-top: 5px; /* Jarak kecil dari button */
+}
+
+.download-dropdown-menu.show {
+    display: block; /* Tampilkan ketika kelas 'show' ada */
+}
+
+.download-dropdown-menu a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 0.9em;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.download-dropdown-menu a:last-child {
+    border-bottom: none; /* Hapus border untuk link terakhir */
+}
+
+.download-dropdown-menu a:hover {
+    background-color: #f8fbff;
+    color: #007bff;
+}
+
+/* Navbar active link style */
+.nav-links ul li a.active {
+    color: #007bff; /* Active link color */
+    font-weight: 600;
+}
+
+/* Responsive adjustments for the new page */
+@media (max-width: 768px) {
+    .info-banner {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+        gap: 15px;
+    }
+
+    .info-icon {
+        font-size: 3.5em;
+    }
+
+    .info-content h2 {
+        font-size: 1.5em;
+    }
+
+    .info-content p {
+        font-size: 0.85em;
+    }
+
+    .data-table-card {
+        padding: 20px;
+    }
+
+    .data-table-card h3 {
+        font-size: 1.3em;
+    }
+
+    .data-table-card tbody td {
+        padding: 10px;
+        font-size: 0.85em;
+    }
+
+    .data-table-card thead th {
+        padding: 10px;
+        font-size: 0.85em;
+    }
+
+    .download-button {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+
+    /* Dropdown responsive */
+    .download-dropdown-menu {
+        right: 0;
+        left: auto;
+        min-width: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    .data-page-main {
+        padding: 20px 3%;
+    }
+
+    .info-banner {
+        padding: 15px;
+    }
+
+    .info-icon {
+        font-size: 3em;
+    }
+
+    .info-content h2 {
+        font-size: 1.2em;
+    }
+
+    .info-content p {
+        font-size: 0.8em;
+    }
+
+    .data-table-card {
+        padding: 15px;
+    }
+
+    .data-table-card h3 {
+        font-size: 1.1em;
+    }
+
+    .data-table-card tbody td {
+        padding: 8px;
+        font-size: 0.8em;
+    }
+
+    .data-table-card thead th {
+        padding: 8px;
+        font-size: 0.8em;
+    }
+
+    /* Dropdown mobile */
+    .download-dropdown-menu {
+        right: 0;
+        left: auto;
+        min-width: 140px;
+    }
+}

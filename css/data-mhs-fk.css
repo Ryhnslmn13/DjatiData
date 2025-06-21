@@ -161,6 +161,14 @@
     color: #74C5FF;
 }
 
+.download-button .fas {
+    transition: transform 0.3s ease;
+}
+
+.download-button.open .fas {
+    transform: rotate(180deg);
+}
+
 /* Dropdown untuk tombol Download Dataset - PERBAIKAN POSISI */
 .download-dropdown-menu {
     display: none; /* Sembunyikan secara default */
